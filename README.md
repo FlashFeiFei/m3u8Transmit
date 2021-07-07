@@ -338,6 +338,37 @@ fileSequence4.ts
 #EXTINF:10,
 ```
 
+##### u3m8 byte-range playlis实现m3u8点播功能
+
+```html
+#采用 byte-range playlis方式
+#命令会生成一个out.m3u8文件和一个out.ts文件
+ ffmpeg -y   -i .\banner-home.ts  -hls_time 15  -hls_flags single_file out.m3u8
+```
+
+out.m3u8
+```html
+#EXTM3U
+#EXT-X-VERSION:4
+#EXT-X-TARGETDURATION:17
+#EXT-X-MEDIA-SEQUENCE:0
+#EXTINF:15.200000,
+#EXT-X-BYTERANGE:10492656@0
+out.ts
+#EXTINF:15.880000,
+#EXT-X-BYTERANGE:9527652@10492656
+out.ts
+#EXTINF:15.160000,
+#EXT-X-BYTERANGE:10509764@20020308
+out.ts
+#EXTINF:17.240000,
+#EXT-X-BYTERANGE:13907112@30530072
+out.ts
+#EXT-X-ENDLIST
+
+```
+
+
 
 
 
