@@ -13,3 +13,8 @@
 
 # Dependency directories (remove the comment below to include it)
 # vendor/
+
+/upload/video/m3u8/*.ts
+/upload/video/metadata/
+/upload/video/ts/
+.idea/
